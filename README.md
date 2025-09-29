@@ -1,75 +1,104 @@
-That's a smart step! A great README is essential for any project.
+💳 LoanSense AI – Credit Risk Prediction
 
-Here is a template for your LoanSense AI app's private Git repository. This version is designed for your internal team and provides structure, clarity, and key warnings about the proprietary nature of the code.
+LoanSense AI is a machine learning web app built with Streamlit to predict whether a loan applicant has a good (1) or bad (0) credit risk.
+It uses a trained Extra Trees Classifier model along with label encoders for categorical variables.
 
-🛡️ LoanSense AI: Credit Risk Prediction Engine
-Overview
-This repository contains the complete source code for the LoanSense AI application, a proprietary mobile and backend system designed to provide real-time, AI-driven credit and loan risk prediction.
+🚀 Features
 
-This project is a commercial product, and the contents are confidential and proprietary.
+User-friendly Streamlit interface with a custom dark theme.
 
-⚠️ Proprietary Notice
-The following elements of this codebase—including but not limited to the risk models, algorithms, data processing pipeline, and business logic—are the exclusive intellectual property of [Your Company Name].
+Input form with applicant details:
 
-Unauthorized viewing, copying, distribution, or modification is strictly prohibited.
+Sex
 
-Repository Access: Access is limited to authorized developers only.
+Age
 
-Licensing: This repository is not covered by any open-source license (MIT, GPL, etc.). All Rights Are Reserved.
+Job type (0 = unskilled, 3 = highly skilled)
 
-💻 Tech Stack
-Component	Technology / Framework	Version
-Mobile App (Frontend)	[React Native / Swift / Kotlin]	[e.g., 0.73.4 / 5.9 / 1.9.0]
-Backend API	[Python / Node.js] (e.g., Django / Express)	[e.g., 3.11 / 18.x]
-Machine Learning	Proprietary Risk Model (using TensorFlow/PyTorch)	[e.g., v3.2.1]
-Database	[PostgreSQL / MongoDB]	[e.g., 16.1]
-Deployment	[AWS / Azure / GCP] (e.g., Docker & Kubernetes)	N/A
+Housing
 
-Export to Sheets
-🛠️ Getting Started (Local Development)
-1. Prerequisites
-[Prerequisite 1]
+Saving accounts
 
-[Prerequisite 2]
+Checking account
 
-Secrets: Access to the shared LastPass/Vault for environment variables (.env file).
+Credit amount
 
-2. Setup Instructions
-Follow these steps to get the project running locally:
+Loan duration (months)
 
-Clone the Repository:
+Predictions of Good or Bad credit risk.
 
-Bash
+Error handling for missing models or encoders.
 
-git clone [your-private-repo-url]
-cd loansense-ai-app
-Install Dependencies (Backend):
+📂 Project Structure
+├── app.py                        # Streamlit web app
+├── Credit risk Project.ipynb     # Jupyter notebook for model training & exploration
+├── extra_trees_credit_model.pkl  # Trained Extra Trees model (must be generated)
+├── Sex_encoder.pkl               # Label encoder for 'Sex'
+├── Housing_encoder.pkl           # Label encoder for 'Housing'
+├── Saving accounts_encoder.pkl   # Label encoder for 'Saving accounts'
+├── Checking account_encoder.pkl  # Label encoder for 'Checking account'
+├── target_encoder.pkl            # Label encoder for target variable
 
-Bash
+⚙️ Installation & Setup
+1. Clone the Repository
+git clone https://github.com/yourusername/loansense-ai.git
+cd loansense-ai
 
-cd backend
+2. Create Virtual Environment (optional but recommended)
+python -m venv venv
+source venv/bin/activate   # Mac/Linux
+venv\Scripts\activate      # Windows
+
+3. Install Dependencies
 pip install -r requirements.txt
-Install Dependencies (Frontend):
 
-Bash
 
-cd mobile-app
-npm install
-Database Setup:
+(You can create requirements.txt with: pip freeze > requirements.txt after installing Streamlit, pandas, scikit-learn, joblib.)
 
-Ensure your local [Database Name] instance is running.
+4. Train the Model (if .pkl files are missing)
 
-Run migrations: python manage.py migrate
+Run the notebook:
 
-Run the Backend:
+jupyter notebook "Credit risk Project.ipynb"
 
-Bash
 
-python manage.py runserver
-Run the Frontend:
+This will generate:
 
-Bash
+extra_trees_credit_model.pkl
 
-npx react-native run-ios # or run-android
-📂 Repository Structure
-.
+encoders (*_encoder.pkl)
+
+5. Run the Streamlit App
+streamlit run app.py
+
+🧪 Example Input
+
+Sex: male
+
+Age: 35
+
+Job: 2 (skilled)
+
+Housing: own
+
+Saving accounts: moderate
+
+Checking account: little
+
+Credit amount: 3000
+
+Duration: 24
+
+Output → ✅ Good credit risk
+
+📊 Tech Stack
+
+Python 3.9+
+
+Streamlit – interactive web app
+
+scikit-learn – model training
+
+joblib – model persistence
+
+pandas – data handling
