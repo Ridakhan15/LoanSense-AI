@@ -90,13 +90,7 @@ The system utilizes the **German Credit Dataset**, containing 1,000 records acro
 
 ---
 
-## 🚀 How to Run Locally
 
-```bash
-git clone https://github.com/Ridakhan15/LoanSense-AI.git
-cd LoanSense-AI
-pip install -r requirements.txt
-streamlit run app.py
 
 ### 🔄 ML Pipeline
 
@@ -113,3 +107,11 @@ graph TD
     E --> F[Deploy Streamlit App]
     F --> G[Real-time Monitoring]
 
+
+## 🚀 How to Run Locally
+
+```bash
+git clone https://github.com/Ridakhan15/LoanSense-AI.git
+cd LoanSense-AI
+pip install -r requirements.txt
+streamlit run app.py
