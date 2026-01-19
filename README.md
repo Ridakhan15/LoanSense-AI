@@ -91,7 +91,12 @@ The system utilizes the **German Credit Dataset**, containing 1,000 records acro
 ---
 
 ## 🚀 How to Run Locally
-bash git clone https://github.com/Ridakhan15/LoanSense-AI.git cd LoanSense-AI pip install -r requirements.txt streamlit run app.py ## 👤 User Flow 1. Enter applicant details 2. Get credit risk prediction 3. View SHAP explanation 4. Test scenarios 5. Receive final recommendation make t proper n block
+
+```bash
+git clone https://github.com/Ridakhan15/LoanSense-AI.git
+cd LoanSense-AI
+pip install -r requirements.txt
+streamlit run app.py
 
 ### 🔄 ML Pipeline
 
