@@ -61,6 +61,7 @@ Gradient boosting model with strong accuracy and generalization
 
 ### 🔄 ML Pipeline
 
+```markdown
 ```mermaid
 graph TD
     A[Raw Data] --> B[Clean Data]
@@ -69,7 +70,7 @@ graph TD
     D --> E[Evaluate Model]
     E --> F[Deploy Streamlit App]
     F --> G[Monitor Performance]
-'''
+
 
 ### 🛠 Tools & Stack
 
