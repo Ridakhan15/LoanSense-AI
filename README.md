@@ -44,15 +44,7 @@ Features: 9 main predictors
 | Credit amount    | Number   | Loan requested              | 250–20,000 EUR     |
 | Duration         | Number   | Loan duration (months)      | 4–72               |
 
-Preprocessing Example:
 
-```python
-data['Saving accounts'].fillna('little', inplace=True)
-data['Checking account'].fillna('little', inplace=True)
-
-from sklearn.preprocessing import LabelEncoder
-for col in ['Sex','Housing','Saving accounts','Checking account']:
-    data[col] = LabelEncoder().fit_transform(data[col])
 
 
 ## 🧠 How It Works
